@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  color-scheme: light;
+  --ink: #17241f;
+  --muted: #74817b;
+  --green: #245c45;
+  --green-dark: #132a23;
+  --green-light: #e8f0e9;
+  --paper: #f7f8f4;
+  --line: #e7eae4;
+  --orange: #e88b55;
+  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); }
+button, input { font: inherit; }
+button { cursor: pointer; }
+.topbar { height: 72px; padding: 0 max(6vw, calc((100vw - 1120px) / 2)); display: flex; align-items: center; justify-content: space-between; background: #fff; }
+.brand { display: flex; gap: 11px; align-items: center; color: var(--ink); text-decoration: none; font: 700 16px Manrope, sans-serif; letter-spacing: -.4px; }
+.brand strong { font-weight: 500; }
+.brand-mark { width: 35px; height: 35px; display: grid; place-items: center; border-radius: 11px; background: var(--green-dark); color: #fff; font: 800 12px Manrope, sans-serif; letter-spacing: .3px; }
+.topbar-note, .eyebrow { color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: 1.4px; }
+.hero { background: var(--green-dark); color: white; padding: 48px max(6vw, calc((100vw - 1120px) / 2)) 45px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+.hero .eyebrow { color: #acc4b2; margin: 0 0 16px; }
+h1, h2, h3, p { margin-top: 0; }
+h1, h2, h3 { font-family: Manrope, "DM Sans", sans-serif; }
+h1 { font-size: clamp(32px, 5vw, 52px); line-height: 1.1; letter-spacing: -2px; margin-bottom: 14px; }
+h1 span { color: #a9c8b2; }
+.hero-description { max-width: 460px; margin: 0; color: #cad7cf; font-size: 14px; line-height: 1.7; }
+.hero-stat { display: grid; grid-template-columns: auto auto; align-items: baseline; gap: 0 10px; min-width: 180px; }
+.stat-number { font: 800 36px Manrope, sans-serif; line-height: 1.05; }
+.stat-number span { font-size: 20px; color: #a9c8b2; }
+.stat-caption { color: #cad7cf; font-size: 11px; }
+.stat-divider { grid-column: 1 / -1; height: 1px; background: #ffffff2b; margin: 13px 0; }
+.cardio-number { font-size: 25px; }
+.tabs { max-width: 1120px; margin: 0 auto; padding: 0 6vw; display: flex; gap: 26px; border-bottom: 1px solid var(--line); }
+.tab-button { background: none; border: 0; color: var(--muted); padding: 20px 2px 14px; font-weight: 600; font-size: 13px; border-bottom: 2px solid transparent; }
+.tab-button.active { color: var(--green); border-color: var(--green); }
+main { padding-bottom: 18px; }
+.tab-panel { max-width: 1120px; margin: 0 auto; padding: 35px 6vw 10px; }
+.hidden { display: none !important; }
+.section-heading { display: flex; justify-content: space-between; align-items: end; gap: 16px; margin-bottom: 20px; }
+.section-heading .eyebrow { margin-bottom: 8px; }
+h2 { font-size: 25px; letter-spacing: -.8px; margin: 0; }
+.day-badge { border-radius: 20px; background: var(--green-light); color: var(--green); font-size: 11px; font-weight: 700; padding: 8px 12px; }
+.workout-summary { display: flex; gap: 9px; flex-wrap: wrap; margin-bottom: 15px; }
+.summary-chip { background: #fff; border: 1px solid var(--line); border-radius: 9px; padding: 9px 12px; font-size: 11px; color: #56645c; }
+.session-timeline { display: grid; grid-template-columns: repeat(3, 1fr); margin: 0 0 14px; padding: 12px 14px; background: #edf2eb; border-radius: 11px; }
+.session-timeline div { display: flex; flex-direction: column; gap: 3px; }
+.session-timeline div + div { border-left: 1px solid #d5dfd4; padding-left: 14px; }
+.session-timeline strong { font: 700 12px Manrope, sans-serif; color: var(--green); }
+.session-timeline span { color: #68756d; font-size: 10px; }
+.exercise-list { display: grid; gap: 10px; }
+.exercise-card { background: #fff; border: 1px solid var(--line); border-radius: 15px; overflow: hidden; }
+.exercise-main { padding: 14px; display: grid; grid-template-columns: 90px 1fr auto; align-items: center; gap: 15px; }
+.exercise-art { height: 78px; border-radius: 11px; background: #eef3ed; display: grid; place-items: center; color: var(--green); }
+.exercise-art svg { width: 76px; height: 68px; }
+.exercise-number { color: #a1aaa4; font-size: 10px; font-weight: 700; }
+.exercise-title { font: 700 15px Manrope, sans-serif; margin: 3px 0 3px; }
+.exercise-equipment { color: var(--muted); font-size: 11px; margin: 0; }
+.exercise-dose { text-align: right; white-space: nowrap; }
+.dose-reps { display: block; font-size: 13px; font-weight: 700; }
+.dose-rest { display: block; margin-top: 5px; font-size: 10px; color: var(--muted); }
+.exercise-instructions { border-top: 1px solid #f0f1ed; padding: 10px 15px 12px 119px; display: flex; justify-content: space-between; gap: 15px; align-items: center; }
+.exercise-instructions p { color: #5e6b63; font-size: 11px; line-height: 1.55; margin: 0; max-width: 650px; }
+.done-label { flex-shrink: 0; display: flex; align-items: center; gap: 7px; color: #526057; font-size: 11px; cursor: pointer; }
+.done-label input { accent-color: var(--green); width: 16px; height: 16px; }
+.card { background: #fff; border: 1px solid var(--line); border-radius: 15px; }
+.cardio-card { margin-top: 16px; background: #f1f5ee; border-color: #e0e9dc; padding: 18px; display: flex; align-items: center; gap: 14px; }
+.card-icon { width: 40px; height: 40px; display: grid; place-items: center; background: #fff; border-radius: 12px; color: var(--green); font-size: 23px; }
+.card-content { flex: 1; }
+.card-content .eyebrow, .rest-card .eyebrow { margin: 0 0 5px; }
+.card h3 { font-size: 15px; margin: 0 0 5px; }
+.card-content p:last-child, .rest-card p:last-child { color: #69756e; font-size: 11px; line-height: 1.6; margin: 0; }
+.intensity-pill { white-space: nowrap; border-radius: 20px; background: #fff; color: var(--green); padding: 7px 10px; font-size: 10px; font-weight: 600; }
+.rest-card { margin-top: 16px; padding: 22px; display: flex; gap: 16px; align-items: flex-start; }
+.rest-emoji { font-size: 25px; color: var(--orange); }
+.session-note { display: flex; gap: 10px; padding: 15px 2px 20px; color: var(--muted); }
+.session-note > span { flex: 0 0 18px; height: 18px; display: grid; place-items: center; border: 1px solid #c9d0ca; border-radius: 50%; font-size: 11px; }
+.session-note p { font-size: 10px; line-height: 1.7; margin: 0; }
+.completion-card { padding: 19px; margin-bottom: 24px; }
+.completion-heading { display: flex; justify-content: space-between; align-items: center; margin-bottom: 17px; }
+.completion-heading .eyebrow { margin-bottom: 5px; }
+.completion-heading h3 { margin: 0; font-size: 18px; }
+.completion-status { color: var(--green); font-size: 11px; font-weight: 600; }
+.calories-label { font-size: 12px; font-weight: 600; display: block; margin-bottom: 8px; }
+.calories-label span { color: var(--muted); font-weight: 400; }
+.calories-entry { display: flex; align-items: center; gap: 10px; }
+.calories-entry input { width: 160px; min-height: 43px; border: 1px solid #dfe4de; border-radius: 9px; padding: 0 12px; outline: none; }
+.calories-entry input:focus { border-color: var(--green); box-shadow: 0 0 0 3px #245c451c; }
+.calories-entry > span { color: var(--muted); font-size: 12px; }
+.save-button { border: 0; border-radius: 9px; background: var(--green); color: #fff; padding: 12px 16px; margin-left: auto; font-size: 12px; font-weight: 600; }
+.save-button:hover { background: #194a35; }
+.save-hint { color: var(--muted); font-size: 10px; margin: 10px 0 0; }
+.calendar-heading { align-items: center; flex-wrap: wrap; }
+.view-switch { display: flex; background: #ecefea; padding: 3px; border-radius: 9px; gap: 2px; }
+.view-switch button { background: transparent; border: 0; border-radius: 7px; color: #66736b; font-size: 11px; padding: 8px 11px; }
+.view-switch button.selected { background: #fff; color: var(--green); box-shadow: 0 1px 3px #17241f16; font-weight: 700; }
+.calendar-controls { display: grid; grid-template-columns: 40px 1fr 40px; align-items: center; margin: 20px 0 13px; }
+.calendar-controls h3 { text-align: center; margin: 0; font-size: 15px; }
+.arrow-button { border: 1px solid var(--line); background: #fff; border-radius: 9px; height: 36px; font-size: 23px; color: var(--green); }
+.calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
+.weekday { text-align: center; color: var(--muted); font-size: 10px; font-weight: 700; padding: 7px 0; }
+.calendar-day { position: relative; min-height: 83px; border: 1px solid var(--line); border-radius: 9px; background: #fff; padding: 8px; text-align: left; color: var(--ink); }
+.calendar-day.outside { opacity: .43; }
+.calendar-day.today { border-color: var(--green); }
+.calendar-day.selected-day { box-shadow: 0 0 0 2px var(--green); }
+.calendar-day .day-number { font-size: 11px; font-weight: 600; }
+.calendar-day .day-mark { display: block; margin-top: 8px; color: var(--green); font-size: 9px; line-height: 1.35; }
+.calendar-day .calorie-mark { display: block; margin-top: 4px; color: #b66b3e; font-size: 9px; }
+.calendar-legend { display: flex; gap: 16px; margin: 12px 0 20px; color: var(--muted); font-size: 10px; }
+.legend-dot { display: inline-block; width: 7px; height: 7px; margin-right: 5px; border-radius: 50%; background: var(--green); }
+.legend-dot.orange { background: var(--orange); }
+.day-detail { padding: 18px; margin-top: 20px; }
+.day-detail .eyebrow { margin-bottom: 7px; }
+.day-detail h3 { font-size: 16px; margin-bottom: 9px; }
+.detail-content { color: #68756d; font-size: 11px; line-height: 1.7; }
+.detail-content p { margin: 0; }
+.detail-chips { display: flex; gap: 7px; flex-wrap: wrap; margin-top: 9px; }
+.detail-chip { background: var(--green-light); color: var(--green); border-radius: 20px; padding: 5px 9px; font-size: 10px; }
+.year-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.year-month { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
+.year-month-button { border: 0; background: none; padding: 0; color: var(--ink); font: 700 12px Manrope, sans-serif; margin-bottom: 8px; }
+.mini-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; }
+.mini-day { height: 14px; display: grid; place-items: center; color: #7d8981; font-size: 8px; }
+.mini-day.has-workout { color: var(--green); font-weight: 800; }
+.mini-day.has-calories { background: #f8eadd; border-radius: 50%; }
+.month-stats { color: var(--muted); font-size: 9px; margin: 8px 0 0; }
+.privacy-note { color: var(--muted); text-align: center; font-size: 10px; margin: 16px 0; }
+footer { background: #fff; text-align: center; padding: 20px 6vw; color: #56645c; font-size: 11px; }
+footer p { margin: 0 0 5px; }
+footer .disclaimer { color: var(--muted); font-size: 9px; }
+
+@media (min-width: 900px) {
+  .exercise-list { grid-template-columns: 1fr 1fr; }
+  .exercise-main { grid-template-columns: 78px 1fr auto; gap: 11px; }
+  .exercise-art { height: 72px; }
+  .exercise-instructions { padding-left: 103px; }
+  .calendar-day { min-height: 98px; }
+}
+@media (max-width: 600px) {
+  .topbar { height: 60px; padding: 0 20px; }
+  .topbar-note { font-size: 8px; letter-spacing: .8px; }
+  .hero { padding: 31px 20px 29px; gap: 15px; align-items: flex-start; }
+  h1 { font-size: 33px; letter-spacing: -1.5px; }
+  .hero-description { font-size: 12px; }
+  .hero-stat { min-width: 103px; grid-template-columns: auto auto; gap: 0 5px; }
+  .stat-number { font-size: 28px; }
+  .stat-number span { font-size: 16px; }
+  .stat-caption { font-size: 9px; }
+  .cardio-number { font-size: 21px; }
+  .tabs { padding: 0 20px; }
+  .tab-panel { padding: 27px 20px 5px; }
+  .section-heading { align-items: flex-start; }
+  h2 { font-size: 22px; }
+  .exercise-main { grid-template-columns: 68px 1fr auto; gap: 10px; padding: 10px; }
+  .exercise-art { height: 67px; }
+  .exercise-art svg { width: 65px; height: 60px; }
+  .exercise-title { font-size: 12px; }
+  .exercise-equipment { font-size: 9px; }
+  .dose-reps { font-size: 11px; }
+  .dose-rest { font-size: 9px; }
+  .exercise-instructions { padding: 9px 11px; align-items: flex-start; }
+  .exercise-instructions p { font-size: 10px; }
+  .session-timeline { padding: 10px; }
+  .session-timeline div + div { padding-left: 8px; }
+  .session-timeline span { font-size: 9px; }
+  .done-label { font-size: 10px; }
+  .cardio-card { padding: 13px; gap: 10px; }
+  .intensity-pill { font-size: 9px; padding: 6px 8px; }
+  .view-switch { width: 100%; }
+  .view-switch button { flex: 1; }
+  .calendar-heading { gap: 13px; }
+  .calendar-grid { gap: 3px; }
+  .calendar-day { min-height: 62px; padding: 5px 4px; border-radius: 7px; }
+  .calendar-day .day-mark, .calendar-day .calorie-mark { font-size: 8px; }
+  .weekday { font-size: 9px; }
+  .year-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .year-month { padding: 9px; }
+}
+@media (max-width: 380px) {
+  .hero { display: block; }
+  .hero-stat { margin-top: 20px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px; }
+  .stat-divider { display: none; }
+  .stat-caption { margin-right: 9px; }
+}

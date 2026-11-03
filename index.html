@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#132a23">
+    <meta name="description" content="Tu entrenador personal para organizar rutinas, cardio y progreso.">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <title>Entrenador personal</title>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Entrenador personal, inicio">
+        <span class="brand-mark" aria-hidden="true">EP</span>
+        <span>Entrenador <strong>personal</strong></span>
+      </a>
+      <span class="topbar-note">TU PROGRESO, A TU RITMO</span>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow" id="today-label"></p>
+          <h1>Un día a la vez.<br><span>Un poco más fuerte.</span></h1>
+          <p class="hero-description">Un plan sencillo para empezar en el gimnasio, cuidar la técnica y celebrar cada paso.</p>
+        </div>
+        <div class="hero-stat" aria-label="Duración">
+          <span class="stat-number">60<span>′</span></span>
+          <span class="stat-caption">fuerza</span>
+          <span class="stat-divider"></span>
+          <span class="stat-number cardio-number">+30<span>′</span></span>
+          <span class="stat-caption">cardio recomendado</span>
+        </div>
+      </section>
+
+      <nav class="tabs" aria-label="Secciones">
+        <button class="tab-button active" type="button" data-tab="routine">Mi rutina</button>
+        <button class="tab-button" type="button" data-tab="calendar">Calendario</button>
+      </nav>
+
+      <section id="routine-panel" class="tab-panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">TU PLAN DE HOY</p>
+            <h2 id="routine-title"></h2>
+          </div>
+          <span id="routine-badge" class="day-badge"></span>
+        </div>
+        <div class="workout-summary" id="workout-summary"></div>
+        <div class="session-timeline" id="session-timeline">
+          <div><strong>10 min</strong><span>calentamiento</span></div>
+          <div><strong>40 min</strong><span>series, pausas y ajustes</span></div>
+          <div><strong>10 min</strong><span>vuelta a la calma</span></div>
+        </div>
+        <div id="exercise-list" class="exercise-list"></div>
+        <section class="card cardio-card" id="cardio-card">
+          <div class="card-icon" aria-hidden="true">↗</div>
+          <div class="card-content">
+            <p class="eyebrow">DESPUÉS DE FUERZA · 30 MIN</p>
+            <h3 id="cardio-title"></h3>
+            <p id="cardio-description"></p>
+          </div>
+          <span class="intensity-pill">Ritmo suave</span>
+        </section>
+        <section class="card rest-card hidden" id="rest-card">
+          <span class="rest-emoji" aria-hidden="true">☀</span>
+          <div>
+            <p class="eyebrow">DÍA DE RECUPERACIÓN</p>
+            <h3>Descansar también es entrenar.</h3>
+            <p>Hoy toca recuperar. Si te apetece, haz un paseo cómodo de 20–30 minutos y unos estiramientos suaves, sin forzar.</p>
+          </div>
+        </section>
+        <div class="session-note">
+          <span aria-hidden="true">i</span>
+          <p>Las sesiones de fuerza duran aproximadamente 60 minutos. El cardio es adicional (30 minutos). Descansa 60–90 segundos entre series y pide al personal del gimnasio que te enseñe a ajustar cada máquina.</p>
+        </div>
+        <section class="card completion-card">
+          <div class="completion-heading">
+            <div>
+              <p class="eyebrow">AL TERMINAR</p>
+              <h3>Registra tu día</h3>
+            </div>
+            <span id="completion-status" class="completion-status"></span>
+          </div>
+          <label class="calories-label" for="calories-input">Calorías consumidas <span>(opcional)</span></label>
+          <div class="calories-entry">
+            <input id="calories-input" type="number" min="0" max="20000" inputmode="numeric" placeholder="p. ej. 2100">
+            <span>kcal</span>
+            <button type="button" class="save-button" id="save-day">Guardar día</button>
+          </div>
+          <p class="save-hint" id="save-hint">Marca los ejercicios que hayas hecho. Tus datos se guardan en este dispositivo.</p>
+        </section>
+      </section>
+
+      <section id="calendar-panel" class="tab-panel hidden">
+        <div class="section-heading calendar-heading">
+          <div>
+            <p class="eyebrow">TU HISTORIAL</p>
+            <h2>Tu calendario</h2>
+          </div>
+          <div class="view-switch" role="group" aria-label="Vista del calendario">
+            <button type="button" data-view="week">Semana</button>
+            <button type="button" data-view="month" class="selected">Mes</button>
+            <button type="button" data-view="year">Año</button>
+          </div>
+        </div>
+        <div class="calendar-controls">
+          <button type="button" id="previous-period" class="arrow-button" aria-label="Periodo anterior">‹</button>
+          <h3 id="period-label"></h3>
+          <button type="button" id="next-period" class="arrow-button" aria-label="Periodo siguiente">›</button>
+        </div>
+        <div id="calendar-content"></div>
+        <section class="card day-detail" id="day-detail">
+          <p class="eyebrow">DETALLE DEL DÍA</p>
+          <h3 id="detail-date">Selecciona un día</h3>
+          <div id="detail-content" class="detail-content"><p>Toca un día del calendario para ver la rutina y las calorías registradas.</p></div>
+        </section>
+        <p class="privacy-note">Tu registro se guarda solo en este dispositivo; no se envía a ningún servidor.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>Empieza ligero, prioriza la técnica y escucha a tu cuerpo.</p>
+      <p class="disclaimer">Plan orientativo para principiantes; no sustituye el consejo de un profesional sanitario o entrenador.</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
